@@ -1,0 +1,34 @@
+[project]
+name = "touchless"
+version = "0.1.0"
+description = "Controle do mouse por gestos da mão com OpenCV e MediaPipe."
+authors = [
+    { name = "cadu", email = "dudusoutomaior2006@gmail.com" }
+]
+requires-python = ">=3.12,<3.13"
+readme = "README.md"
+dependencies = [
+    "mediapipe>=1.0.1",
+    "numpy>=2.5.3",
+    "opencv-python>=5.0.0.93",
+    "pyautogui>=0.9.54",
+]
+
+[project.optional-dependencies]
+analise = [
+    "matplotlib>=3.11.2",
+    "pandas>=3.0.6",
+]
+
+[project.scripts]
+touchless = "touchless.app:main"
+touchless-analise = "touchless.analise:main"
+
+[build-system]
+requires = ["uv_build>=0.12.10,<0.13.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+]
